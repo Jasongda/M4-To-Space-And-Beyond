@@ -1,8 +1,17 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
 
 config/name="M04. To Space and Beyond (Solutions)"
+run/main_scene="uid://sojv8oi4agvb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/ship.png"
 
@@ -21,7 +30,7 @@ project/assembly_name="M04. To Space and Beyond"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdpractice/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
