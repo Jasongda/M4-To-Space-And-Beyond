@@ -1,7 +1,22 @@
 extends Sprite2D
 
-var velocity := Vector2(480, -480)
+var max_speed := 600
+var velocity := Vector2(0, 0)
+var boost_speed = 1500
 
 func _process(delta: float) -> void:
+	var direction := Vector2(0, 0)
+	direction.x = Input.get_axis("move_left","move_right")
+	direction.y =Input.get_axis("move_up","move_down")
+	if Input.is_action_just_pressed("boost"):
+		max_speed = boost_speed
+		get_node("Timer").start()
+	
+	velocity = direction * max_speed
 	position += velocity * delta
-	rotation = velocity.angle()
+	if direction.length() > 0.0:
+		rotation = velocity.angle()
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
